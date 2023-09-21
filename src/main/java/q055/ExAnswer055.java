@@ -1,35 +1,54 @@
 package q055;
 
+import com.google.common.collect.Streams;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
-import java.util.List;
-import java.util.stream.IntStream;
 
+/**
+ * 別解。
+ */
 public class ExAnswer055 {
+    /**
+     * メインメソッド。
+     *
+     * @param args コマンドライン引数
+     */
     public static void main(String[] args) {
-        Path input = Path.of("./src/main/java/q055/MyAnswer055.txt");
-        Path output = Path.of("./src/main/java/q055/output.txt");
+        Path input = Path.of("./src/main/resources/MyAnswer055.txt");
+        Path output = Path.of("./src/main/resources/exoutput055.txt");
 
-        try {
-            List<String> inputLines = Files.readAllLines(input);
-
-            List<String> outputLines = IntStream
-                    .range(0, inputLines.size())
-                    .mapToObj(i -> String.format("%s %s", i + 1, inputLines.get(i)))
-                    .toList();
-
-            Files.write(
-                    output,
-                    outputLines,
-                    StandardCharsets.UTF_8,
-                    StandardOpenOption.CREATE,
-                    StandardOpenOption.TRUNCATE_EXISTING
-            );
-        } catch (IOException e) {
+        try (
+                BufferedReader reader = Files.newBufferedReader(
+                        input,
+                        StandardCharsets.UTF_8
+                );
+                BufferedWriter writer = Files.newBufferedWriter(
+                        output,
+                        StandardCharsets.UTF_8
+                )
+        ) {
+            Streams.mapWithIndex(
+                            reader.lines(),
+                            (str, idx) -> String.format("%s %s", idx + 1, str)
+                    )
+                    .forEach(i -> writeReturn(writer, i));
+        } catch (IOException | UncheckedIOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private static void writeReturn(BufferedWriter writer, String line) {
+        try {
+            writer.write(line);
+            writer.newLine();
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
         }
     }
 }

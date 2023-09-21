@@ -18,7 +18,7 @@ public class MyAnswer055 {
         String path = Path.of(".").toFile().getAbsolutePath();
         System.out.println(path);
 
-        Path file = Path.of("./src/main/java/q055/MyAnswer055.txt");
+        Path file = Path.of("./src/main/resources/MyAnswer055.txt");
         try (Stream<String> stream = Files.lines(file)) {
             Integer sum = stream.map(String::length).mapToInt(i -> i).sum();
             System.out.println(sum);
