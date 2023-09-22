@@ -1,0 +1,9 @@
+{
+  "cache-control" : [ "max-age=12460" ],
+  "connection" : [ "keep-alive" ],
+  "content-length" : [ "86482" ],
+  "content-type" : [ "text/html" ],
+  "date" : [ "Fri, 22 Sep 2023 10:27:47 GMT" ],
+  "etag" : [ "\"e23aef485f362e8a8c93a29303f5fbe8:1693381270.081054\"" ],
+  "server" : [ "AkamaiNetStorage" ]
+}
