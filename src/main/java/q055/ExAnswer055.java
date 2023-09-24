@@ -11,7 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 /**
- * 別解。
+ * 応用。
  */
 public class ExAnswer055 {
     /**
@@ -35,18 +35,17 @@ public class ExAnswer055 {
         ) {
             Streams.mapWithIndex(
                             reader.lines(),
-                            (str, idx) -> String.format("%s %s", idx + 1, str)
+                            (str, idx) -> String.format("%s %s%n", idx + 1, str)
                     )
-                    .forEach(i -> writeReturn(writer, i));
+                    .forEach(i -> write(writer, i));
         } catch (IOException | UncheckedIOException e) {
             e.printStackTrace();
         }
     }
 
-    private static void writeReturn(BufferedWriter writer, String line) {
+    private static void write(BufferedWriter writer, String line) {
         try {
             writer.write(line);
-            writer.newLine();
         } catch (IOException e) {
             throw new UncheckedIOException(e);
         }
