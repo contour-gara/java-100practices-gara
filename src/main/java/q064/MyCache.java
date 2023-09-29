@@ -27,10 +27,11 @@ public class MyCache {
      * @return
      */
     public Object doSomething(String key) {
+//        Object result = cache.getIfPresent(key);
         Object result = cache.getUnchecked(key);
 
 //        if (nonNull(result)) return result;
-
+//
 //        result = new Object();
 //        cache.put(key, result);
 

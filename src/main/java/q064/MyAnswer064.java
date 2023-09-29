@@ -23,5 +23,14 @@ public class MyAnswer064 {
 
         threadA.start();
         threadB.start();
+
+//        MyMap map = new MyMap();
+//
+//        ThreadA threadA = new ThreadA(map);
+//        ThreadB threadB = new ThreadB(map);
+//
+//        threadA.start();
+//        threadB.start();
+
     }
 }

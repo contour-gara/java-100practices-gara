@@ -7,6 +7,7 @@ import java.util.stream.IntStream;
  */
 public class ThreadB extends Thread {
     private final MyCache cache;
+//    private final MyMap cache;
 
     /**
      * ThreadB オブジェクトを割り当て、初期化します。
@@ -16,6 +17,9 @@ public class ThreadB extends Thread {
     public ThreadB(MyCache cache) {
         this.cache = cache;
     }
+//    public ThreadB(MyMap cache) {
+//        this.cache = cache;
+//    }
 
     /**
      * 1 から 100 まで MyCache の doSomething に渡し、出力します。
