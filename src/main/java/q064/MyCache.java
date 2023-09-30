@@ -1,40 +1,29 @@
 package q064;
 
-import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 
-import static java.util.Objects.nonNull;
-
 /**
- *
+ * キーを値にマッピングするオブジェクトです。
  */
 public class MyCache {
-    //    private final Cache<String, Object> cache;
     private final LoadingCache<String, Object> cache;
 
     /**
-     *
+     * MyCache オブジェクトを割り当て、初期化します。
      */
     public MyCache() {
-//        cache = CacheBuilder.newBuilder().build();
-        cache = CacheBuilder.newBuilder().build(CacheLoader.from(() -> new Object()));
+        cache = CacheBuilder.newBuilder().build(CacheLoader.from(Object::new));
     }
 
     /**
-     * @param key
-     * @return
+     * Cache に対して指定された文字列で検索し、オブジェクトを返します。
+     *
+     * @param key 指定された文字列
+     * @return 検索し返ったオブジェクト
      */
     public Object doSomething(String key) {
-//        Object result = cache.getIfPresent(key);
-        Object result = cache.getUnchecked(key);
-
-//        if (nonNull(result)) return result;
-//
-//        result = new Object();
-//        cache.put(key, result);
-
-        return result;
+        return cache.getUnchecked(key);
     }
 }

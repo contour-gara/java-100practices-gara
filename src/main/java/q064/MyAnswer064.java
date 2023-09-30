@@ -26,11 +26,10 @@ public class MyAnswer064 {
 
 //        MyMap map = new MyMap();
 //
-//        ThreadA threadA = new ThreadA(map);
-//        ThreadB threadB = new ThreadB(map);
+//        ThreadMapA threadMapA = new ThreadMapA(map);
+//        ThreadMapB threadMapB = new ThreadMapB(map);
 //
-//        threadA.start();
-//        threadB.start();
-
+//        threadMapA.start();
+//        threadMapB.start();
     }
 }
