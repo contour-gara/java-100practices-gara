@@ -24,12 +24,12 @@ public class MyAnswer064 {
         threadA.start();
         threadB.start();
 
-//        MyMap map = new MyMap();
-//
-//        ThreadMapA threadMapA = new ThreadMapA(map);
-//        ThreadMapB threadMapB = new ThreadMapB(map);
-//
-//        threadMapA.start();
-//        threadMapB.start();
+        MyMap map = new MyMap();
+
+        ThreadMapA threadMapA = new ThreadMapA(map);
+        ThreadMapB threadMapB = new ThreadMapB(map);
+
+        threadMapA.start();
+        threadMapB.start();
     }
 }

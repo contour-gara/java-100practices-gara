@@ -15,8 +15,11 @@ public final class Kock066 {
         if (isNull(modelList)) return builder.toString();
 
         for (Model model : modelList) {
-            if (nonNull(model)) modelToString(model, builder);
-            else builder.append("null\n---------\n");
+            if (nonNull(model)) {
+                modelToString(model, builder);
+            } else {
+                builder.append("null\n---------\n");
+            }
         }
 
         return builder.toString();
@@ -26,8 +29,11 @@ public final class Kock066 {
         builder.append(String.format("id: %s%n", model.getId()));
         builder.append(String.format("name: %s%n", model.getName()));
 
-        if (nonNull(model.getType())) builder.append(String.format("type: %s%n", model.getType().getId()));
-        else builder.append("type: null\n");
+        if (nonNull(model.getType())) {
+            builder.append(String.format("type: %s%n", model.getType().getId()));
+        } else {
+            builder.append("type: null\n");
+        }
 
         builder.append(String.format("memo: %s%n", model.getMemo()));
         builder.append("---------\n");

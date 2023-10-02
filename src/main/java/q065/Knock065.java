@@ -1,5 +1,5 @@
 //package q065;
-
+//
 //import java.util.logging.Logger;
 //
 //import static java.util.logging.Level.WARNING;
@@ -19,7 +19,7 @@
 //        if (isNull(models) || models.isEmpty()) return;
 //
 //        try (
-//                helper = new DBOpenHelper(activity.getApplicationContext(),"foo.db", null, Constants.DB_VERSION);
+//                helper = new DBOpenHelper(activity.getApplicationContext(), "foo.db", null, Constants.DB_VERSION);
 //                sdb = helper.getWritableDatabase()
 //        ) {
 //            for (Model model : models) {
